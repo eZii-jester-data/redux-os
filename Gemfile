@@ -44,7 +44,7 @@ gem 'acts_as_paranoid', '~> 0.6.0'
 gem 'rails'#, github: 'eZiiOS/skreets', branch: 'server-inspection-from-frontend-think-chrome-web-inspector'
 # Use sqlite3 as the database for Active Record
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 3.12'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
