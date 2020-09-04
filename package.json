@@ -38,7 +38,7 @@
     "css-loader": "^2.1.1", 
     "extra-watch-webpack-plugin": "^1.0.3",
     "file-loader": "^4.2.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "parallel-webpack": "^2.4.0",
     "sass-loader": "^7.2.0",
     "style-loader": "0.23.1",
