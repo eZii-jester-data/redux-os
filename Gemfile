@@ -2,9 +2,9 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 
-ruby '2.6.5'
+ruby '2.6.6'
 
-
+gem 'sqlite3'
  gem 'opal', github: 'janbiedermann/opal', branch: 'es6_modules_1_1'
  gem 'opal-webpack-loader', '~> 0.9.6'
 

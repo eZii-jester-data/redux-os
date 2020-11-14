@@ -1,6 +1,7 @@
 # typed: false
 Rails.application.configure do
   config.hosts << "e43381f3.ngrok.io"
+  config.hosts << "3000-f62749ac-9f7c-4211-9f44-6bd10e805bc1.ws-eu01.gitpod.io"
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on

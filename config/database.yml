@@ -1,6 +1,9 @@
 production:
   url: postgres://yprxfzrq:Ne6smqWdc0Lb6Nx9YEsBvUYe5vrfhZll@salt.db.elephantsql.com:5432/yprxfzrq
 development:
-  url: postgres://yprxfzrq:Ne6smqWdc0Lb6Nx9YEsBvUYe5vrfhZll@salt.db.elephantsql.com:5432/yprxfzrq
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
 test:
   url: postgres://yprxfzrq:Ne6smqWdc0Lb6Nx9YEsBvUYe5vrfhZll@salt.db.elephantsql.com:5432/yprxfzrq
