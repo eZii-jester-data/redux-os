@@ -17,7 +17,7 @@
     end
 
     def file_system_identifier
-      global_path.match(/\/([^\/]+)/)[1]
+      global_path.match(/\A[^\/]+/)[0]
     end
 
     def to_s
