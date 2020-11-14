@@ -13,10 +13,13 @@
     end
 
     def erb_file?
-        false
+        file_extension? && file_extension?('erb')
     end
 
-    
+    def file_extension?(type=/[^\.]/)
+        global_path =~ /\.#{type}\Z/
+    end
+
     def file_system_path
       global_path.sub(/\A(?:\/)?#{self.file_system.machine_readable_identifier}/, '')
     end
