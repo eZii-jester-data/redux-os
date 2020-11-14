@@ -13,10 +13,10 @@
     end
 
     def erb_file?
-        file_extension? && file_extension?('erb')
+        file? && file_extension?('erb')
     end
 
-    def file_extension?(type=/[^\.]/)
+    def file_extension?(type)
         global_path =~ /\.#{type}\Z/
     end
 

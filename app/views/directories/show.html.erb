@@ -261,7 +261,11 @@ session[:current_task]
     
               <% if path.file? && path.to_s =~ /.*?#{Regexp.escape(part_of_path)}\Z/ %>
                      <span style="color: purple"><%= path.split('/').last %></span>
-                <% elsif path.erb_file? %>              
+                <% if path.erb_file? %>
+                 <a>render</a>   
+                <% end %>      
+
+
                 <% else %>
 
 <%
