@@ -260,8 +260,11 @@ session[:current_task]
               <SPAN>/</SPAN>     
     
               <% if path.file? && path.to_s =~ /.*?#{Regexp.escape(part_of_path)}\Z/ %>
-                <span style="color: purple"><%= path.split('/').last %></span>
-              <% else %>
+                <% if path.erb_file? %>
+                <% else %>
+                  <span style="color: purple"><%= path.split('/').last %></span>
+              
+                <% end %>
 
 <%
               def escape_dots(path)

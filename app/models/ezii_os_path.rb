@@ -12,6 +12,11 @@
       self.complementary_local_file_system_paths = []
     end
 
+    def erb_file?
+        false
+    end
+
+    
     def file_system_path
       global_path.sub(/\A(?:\/)?#{self.file_system.machine_readable_identifier}/, '')
     end
