@@ -196,7 +196,7 @@ $('.toast').toast({autohide: false});
                       end
                     end
 
-                  rescue Errno::EACCES, Errno::EPERM 
+                  rescue# Errno::EACCES, Errno::EPERM 
                   end
 
                   ret_val
@@ -235,7 +235,7 @@ session[:current_task]
 				  <a href="#" class='btn btn-primary purchase-hint' onClick="buyHint();">Buy a hint (est. 100¢)</a>
 			  </div>
 <ul class="list-group">
-
+<%= @paths %>
     <%  @paths.each do |path| %>
         <li 
           class="list-group-item

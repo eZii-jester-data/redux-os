@@ -14,7 +14,7 @@ class DirectoriesController < ApplicationController
     if params[:id] =~ /\A\//
       global_dir_path = params[:id]
     else
-      global_dir_path = '/local' + File.expand_path(File.join(Rails.application.root.to_s,params[:id]))
+      global_dir_path = '/local' + File.expand_path(File.join(Rails.application.root.to_s))
     end
     
     @path = EziiOsPath.new(global_dir_path)
