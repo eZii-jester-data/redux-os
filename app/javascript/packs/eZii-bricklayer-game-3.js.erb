@@ -1,6 +1,5 @@
 const character3dAssetId = <%= Rails.env.production? ? 8 : 4 %>;
 const brick3dAssetId = <%= Rails.env.production? ? 9 : 6 %>;
-const electricShelf3dAssetId = <%= Rails.env.production? ? 10 : 7 %>;
 
 
 
@@ -84,16 +83,7 @@ $(function() {
 			window.mainObject2.position.z = 20;
 		});
 		
-		main.addObject(electricShelf3dAssetId).then(function([object, mixer, id]) {
-			window.mainObject3 = object;
-			
-			main.mixers[id] = mixer;
-		
-			main.animate(id);
-		
-			window.mainObject3.position.z = 20;
-			window.mainObject3.position.x = 20;	
-		});
+	
 		
 		
 		main.grid.on('click', function(ev) {
