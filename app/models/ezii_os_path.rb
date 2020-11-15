@@ -25,11 +25,15 @@
     end
 
     def file_system_identifier
-      global_path.match(/\A[^\/]+/)[0]
+      global_path.match(/\A\/?([^\/]+)/)[1]
+    end
+
+    def inspect
+      return "[#{file_system_identifier}] #{file_system_path}"
     end
 
     def to_s
-      return file_system_path
+        file_system_path
     end
 
     def hacky_split_path(*args)
