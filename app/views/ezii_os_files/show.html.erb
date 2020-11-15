@@ -1,12 +1,12 @@
 
+<h1>eZiiOS file show</h1>
+
 <!-- @path.class.new because implementation could change -->
 <%# @path.class.new because implementation could change  %>
 <%= "<h1>Admin</h1>".html_safe if params[:admin] %>
 
 <% if File.exist?(@path.file_system_path) %>
   <%= render 'wit_ai_widget', file_path: @path.class.new(@path.file_system_path) %>
-<% elsif File.exist?(@path.local_file_system_path) %>
-  <%= render 'wit_ai_widget', file_path: @path.class.new(@path.local_file_system_path) %>
 <% end %>
 
 

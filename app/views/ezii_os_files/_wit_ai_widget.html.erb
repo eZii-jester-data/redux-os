@@ -95,7 +95,7 @@ var map = L.map('map', { center: [37.0, 45.0], zoom: 0 });
 
 
 <% when '.erb' %>
-  <% if params[:admin].present? || params[:user].present? # == Digest::SHA256::hexdigest(request.remote_ip)%>
+  <% #if params[:admin].present? || params[:user].present? # == Digest::SHA256::hexdigest(request.remote_ip)%>
     <h3>ERB output</h3>
 
     <pre><code>
@@ -156,7 +156,7 @@ var map = L.map('map', { center: [37.0, 45.0], zoom: 0 });
         end
       %>
     </pre>
-  <% end %>
+  <% #end %>
 <% when '.pdf' %>
   <iframe src="data:application/pdf;base64,<%= Base64.encode64(open(file_path.global_path) { |io| io.read }) %>" width="600" height="780" style="border: none;"> </iframe>
 <% when '.jpg' %>
