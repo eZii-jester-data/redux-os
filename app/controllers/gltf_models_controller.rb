@@ -13,8 +13,6 @@ class GltfModelsController < ApplicationController
   def show
 
     path = @gltf_model.global_path
-        fail path
-
     path = path.match(/\/storage.*/)[0]
 
     path = File.join('local', Rails.application.root.to_s, path)
