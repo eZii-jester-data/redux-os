@@ -113,15 +113,11 @@ $(function() {
 			console.log(evt.which);
 			
 			switch(evt.which) {
-			  case 76:
-  				main.addObject(brick3dAssetId).then(function([object, mixer, id]) {
-  					main.mixers[id] = mixer;
-		
-  					main.animate(id);
-					
-  					object.position.z = window.mainObject.position.z;
-  					object.position.x = window.mainObject.position.x;
-  				});
+              case 76:
+                let object = window.mainObject2.clone();
+                
+                object.position.z = window.mainObject.position.z;
+                object.position.x = window.mainObject.position.x;
 			   break;
 			  case 38:
 				  main.tiltCurrentlySelectedObjectUpwards();
