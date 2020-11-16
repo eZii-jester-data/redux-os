@@ -7,8 +7,8 @@
   "application.js.map": "/packs/js/application-2f2ce98701a29b4710f1.js.map",
   "copy-and-paste-websocket-update.js": "/packs/js/copy-and-paste-websocket-update-3cb3ece852025b4c5703.js",
   "copy-and-paste-websocket-update.js.map": "/packs/js/copy-and-paste-websocket-update-3cb3ece852025b4c5703.js.map",
-  "eZii-bricklayer-game-3.js": "/packs/js/eZii-bricklayer-game-3-e18524437b5d6b5679b3.js",
-  "eZii-bricklayer-game-3.js.map": "/packs/js/eZii-bricklayer-game-3-e18524437b5d6b5679b3.js.map",
+  "eZii-bricklayer-game-3.js": "/packs/js/eZii-bricklayer-game-3-8d5f4424cf226e2c7a70.js",
+  "eZii-bricklayer-game-3.js.map": "/packs/js/eZii-bricklayer-game-3-8d5f4424cf226e2c7a70.js.map",
   "eZii-bricklayer-game.js": "/packs/js/eZii-bricklayer-game-06d784a023202d22fb2e.js",
   "eZii-bricklayer-game.js.map": "/packs/js/eZii-bricklayer-game-06d784a023202d22fb2e.js.map",
   "eZii-bricklayer-game/3d-stick-man.js": "/packs/js/eZii-bricklayer-game/3d-stick-man-04715a9c69e87294b1c2.js",
@@ -54,10 +54,10 @@
     },
     "eZii-bricklayer-game-3": {
       "js": [
-        "/packs/js/eZii-bricklayer-game-3-e18524437b5d6b5679b3.js"
+        "/packs/js/eZii-bricklayer-game-3-8d5f4424cf226e2c7a70.js"
       ],
       "js.map": [
-        "/packs/js/eZii-bricklayer-game-3-e18524437b5d6b5679b3.js.map"
+        "/packs/js/eZii-bricklayer-game-3-8d5f4424cf226e2c7a70.js.map"
       ]
     },
     "eZii-bricklayer-game": {

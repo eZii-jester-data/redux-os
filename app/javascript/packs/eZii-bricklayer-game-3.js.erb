@@ -81,7 +81,9 @@ $(function() {
 		
 			// main.animate(id);
 		
-			window.mainObject2.position.z = 20;
+            window.mainObject2.position.z = 20;
+            
+            window.mainObject2.visible = false;
 		});
 		
 	
@@ -118,6 +120,13 @@ $(function() {
                 
                 object.position.z = window.mainObject.position.z;
                 object.position.x = window.mainObject.position.x;
+
+                object.visible = true;
+
+                main.scene.add(object);
+                
+                console.log("object visible?")
+                console.log(object.visible);
 			   break;
 			  case 38:
 				  main.tiltCurrentlySelectedObjectUpwards();
