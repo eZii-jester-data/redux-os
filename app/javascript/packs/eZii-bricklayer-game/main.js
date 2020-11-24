@@ -50,7 +50,8 @@ export default class EZIIBrickLayerGameMain {
 	
 	init() {
 
-		this.scene = new THREE.Scene();
+        this.scene = new THREE.Scene();
+
 	
 		var geometry = new THREE.BoxGeometry( 100, 100, 10 );
 		var material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );

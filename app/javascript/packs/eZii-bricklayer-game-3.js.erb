@@ -8,17 +8,8 @@ import EZIIBrickLayerGameMain from './eZii-bricklayer-game/main.js';
 import * as THREE from 'three';
 
 
-import EZII3DStickMan from './eZii-bricklayer-game/3d-stick-man.js'
 
-var eZii3dStickMan;
 $(function() {
-	
-	var piemenu = new wheelnav('piemenu');
-	piemenu.sliceInitPathFunction = piemenu.slicePathFunction;
-	piemenu.initPercent = 0.1;
-	piemenu.wheelRadius = piemenu.wheelRadius * 0.83;
-	
-	piemenu.createWheel();	
 	
 	
 	var main = new EZIIBrickLayerGameMain();
@@ -28,12 +19,19 @@ $(function() {
 		main.init();
 		main.moveObjectZAxis(main.cubes[1]);
 		
-		
+        
+        const geometry = new THREE.BoxGeometry( 1, 1, 1 );
+const material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
+const cube = new THREE.Mesh( geometry, material );
+main.scene.add( cube );
+
+
+
 		window.threeJsScene = main.scene;
 		
 		
-		eZii3dStickMan = new EZII3DStickMan();
-		
+
+        
 	
 		main.addObject(character3dAssetId).then(function([object, mixer, id]) {
 			window.mainObject = object;
@@ -60,7 +58,7 @@ $(function() {
 					
 					main.stopAnimation(character3dAssetId);
 					
-					while(main.stoppedMixers[character3dAssetId].time > 0.3) {
+					while(main.stoppedMixers[character3dAssetId] && main.stoppedMixers[character3dAssetId].time > 0.3) {
 						main.stoppedMixers[character3dAssetId].update(-0.1);
 					}		
 				}
@@ -107,61 +105,8 @@ $(function() {
 			window.lastUpdateForMainObjectLookAt = positionWanted;
 			window.mainObject.lookAt(positionWanted);
 		});
-		
-			
-		
-		
-		$(document).on('keydown', function(evt) {
-			console.log(evt.which);
-			
-			switch(evt.which) {
-              case 76:
-                let object = window.mainObject2.clone();
-                
-                object.position.z = window.mainObject.position.z;
-                object.position.x = window.mainObject.position.x;
 
-                object.visible = true;
-
-                main.scene.add(object);
-                
-                console.log("object visible?")
-                console.log(object.visible);
-			   break;
-			  case 38:
-				  main.tiltCurrentlySelectedObjectUpwards();
-			    break;
-			  case 40:
-				  main.tiltCurrentlySelectedObjectDownwards();
-			    break;
-			  default:
-				console.log(evt.which, 'not handled');
-			}
-		});
-		
-		
-		window.letStickManAppear = function() {
-			eZii3dStickMan.show(window.mainObject.position); // should be pass by value, not by reference to value (default in ruby and js), ideally this would be a deepCopy or a native javascript passByValue that is not implemented via reference passing (as in an array is passed and argument receiver function can alter the array). IMMPORTANT FOR IT PEOPLE: Don't confuse "pass by reference" (refernece to variable holder), "passy by value via referencee" (reference to value) and "pass by value", ok? We all learn all our life long, just because on doesn't understand something, it doesn't mean the person who designed it is "imbecile" (https://medium.com/@manu_78098/im-quite-aware-of-the-concept-of-optimistic-locking-d633fc28ce6c).
-				
-				eZii3dStickMan.eZii3dStickManThreeJsGroup.lookAt(window.lastUpdateForMainObjectLookAt);
-		}
-		
-		
-		$(document).on('contextmenu', function(evt) {
-			
-			console.log(evt);
-			
-			// $("#contextmenu-eZii-brick-game-3").remove();
-			
-			// let div = $('<div id="contextmenu-eZii-brick-game-3" style="background-color: white;">TEST</div>');
-			
-			
-			// $(document.body).append(div);
-			$('#piemenu').css('position', 'fixed');
-			
-			$('#piemenu').css('top', evt.clientY);
-			$('#piemenu').css('left', evt.clientX);
-			
-		});
-	})
+    });
 });
+
+
