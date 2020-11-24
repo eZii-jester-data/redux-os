@@ -11,12 +11,15 @@ class DirectoriesController < ApplicationController
   # GET /directories/1
   # GET /directories/1.json
   def show
-    if params[:id] =~ /\A\//
+    case params[:id]
+    when /\A\//
       global_dir_path = params[:id]
+    when /\Alocal\Z/
+      global_dir_path = '/local' + File.expand_path(File.join(Rails.application.root.to_s))
     else
-      global_dir_path = '/local' + File.expand_path(File.join(Rails.application.root.to_s,params[:id]))
+      global_dir_path = params[:id]
     end
-    
+
     @path = EziiOsPath.new(global_dir_path)
 
     case @path.file_system.machine_readable_identifier

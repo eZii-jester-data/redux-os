@@ -196,7 +196,7 @@ $('.toast').toast({autohide: false});
                       end
                     end
 
-                  rescue Errno::EACCES, Errno::EPERM 
+                  rescue# Errno::EACCES, Errno::EPERM 
                   end
 
                   ret_val
@@ -235,7 +235,7 @@ session[:current_task]
 				  <a href="#" class='btn btn-primary purchase-hint' onClick="buyHint();">Buy a hint (est. 100¢)</a>
 			  </div>
 <ul class="list-group">
-
+<%= @paths %>
     <%  @paths.each do |path| %>
         <li 
           class="list-group-item
@@ -260,8 +260,13 @@ session[:current_task]
               <SPAN>/</SPAN>     
     
               <% if path.file? && path.to_s =~ /.*?#{Regexp.escape(part_of_path)}\Z/ %>
-                <span style="color: purple"><%= path.split('/').last %></span>
-              <% else %>
+                     <span style="color: purple"><%= path.split('/').last %></span>
+                <% if path.erb_file? %>
+                 <a href="<%= ezii_os_file_path(path.global_path)%>">render</a>   
+                <% end %>      
+
+
+                <% else %>
 
 <%
               def escape_dots(path)

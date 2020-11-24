@@ -1,5 +1,5 @@
 # typed: false
-class CreateStickRecords < ActiveRecord::Migration[6.1]
+class CreateStickRecords < ActiveRecord::Migration[4.2]
   def change
     create_table :stick_records do |t|
       t.text :identifier

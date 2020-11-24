@@ -7,9 +7,18 @@
     attr_accessor :https_url, :local_file_system_path, :complementary_local_file_system_paths # hacky
 
     def initialize(global_path)
-      self.global_path = global_path
+      self.global_path = global_path.gsub(/\t/, '')
+
       self.file_system = FileSystem.find_by(machine_readable_identifier: file_system_identifier)
       self.complementary_local_file_system_paths = []
+    end
+
+    def erb_file?
+        file? && file_extension?('erb')
+    end
+
+    def file_extension?(type)
+        global_path =~ /\.#{type}\Z/
     end
 
     def file_system_path
@@ -17,11 +26,15 @@
     end
 
     def file_system_identifier
-      global_path.match(/\/([^\/]+)/)[1]
+      global_path.match(/\A\/?([^\/]+)/)[1].gsub(/\t/, '')
+    end
+
+    def inspect
+      return "[#{file_system_identifier}] #{file_system_path}"
     end
 
     def to_s
-      return file_system_path
+        file_system_path
     end
 
     def hacky_split_path(*args)

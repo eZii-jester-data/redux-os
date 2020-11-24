@@ -1,4 +1,4 @@
 # typed: false
 class ApplicationController < ActionController::Base
-    layout 'application-landing-page-redux'
+    layout 'only_yield'
 end

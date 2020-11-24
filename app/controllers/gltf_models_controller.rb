@@ -11,9 +11,15 @@ class GltfModelsController < ApplicationController
   # GET /gltf_models/1
   # GET /gltf_models/1.json
   def show
+
+    path = @gltf_model.global_path
+    path = path.match(/\/storage.*/)[0]
+
+    path = File.join('local', Rails.application.root.to_s, path)
+
     respond_to do |format|
       format.gltf do
-        send_file EziiOsPath.new(@gltf_model.global_path).file_system_path
+        send_file EziiOsPath.new(path).file_system_path
       end
     end
   end
