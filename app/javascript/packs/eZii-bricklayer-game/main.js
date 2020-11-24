@@ -58,7 +58,9 @@ export default class EZIIBrickLayerGameMain {
 	
 		// §
 		this.cubes.push(new THREE.Mesh( geometry, material ));
-		this.scene.add( this.cubes[0] );
+        this.scene.add( this.cubes[0] );
+        
+        this.cubes[0].position.z = -30;
 	
 		var geometry2 = new THREE.BoxGeometry( 100, 100, 10 );
 		var material2 = new THREE.MeshBasicMaterial( {color: 0x0000ff} );
