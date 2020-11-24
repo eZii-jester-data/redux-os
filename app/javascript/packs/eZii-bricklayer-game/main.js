@@ -68,7 +68,10 @@ export default class EZIIBrickLayerGameMain {
 		// §
 		this.cubes.push(new THREE.Mesh( geometry2, material2 ));
 		this.scene.add(	 this.cubes[1] );
-	
+    
+        
+        this.cubes[1].position.z = 30;
+        
 		this.scene.background = new THREE.Color( 0x999999 );
 		var light = new THREE.DirectionalLight( 0xffffff );
 		light.position.set( 0.5, 1.0, 0.5 ).normalize();
